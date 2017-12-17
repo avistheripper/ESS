@@ -1,0 +1,710 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+body {background-color: #D3D9D9;}
+* {transition: 0.4s ease;}    
+
+$coverColor1 = #3C3D42;
+$coverColor2 = #6DDBCE;
+$coverColor3 = #F0F0F0;
+$hipsterBackground1 = url('http://watmmagazine.com/wp-content/uploads/2012/10/484432_386260888095817_1540832805_n.jpg') no-repeat center;
+$hipsterBackground2 = url('https://24.media.tumblr.com/45842687e9e7a11a627e9138ea279b42/tumblr_n28y36XF2L1qlmppmo1_500.jpg') no-repeat center;
+$hipsterBackground3 = url('http://images.8tracks.com/cover/i/000/363/416/owl_fricky-8753.jpg?rect=0,95,842,842&q=98&fm=jpg&fit=max') no-repeat center;
+$hipsterBackground4 = url('https://img0.etsystatic.com/038/0/9283026/il_fullxfull.597008186_ptu3.jpg') no-repeat center;
+    
+.rela-block
+    display block
+    position relative
+
+.side-buttons-container
+    position fixed
+    top 50%
+    right 0
+    width 80px
+    transform translateY(-50%)
+    background-color rgba(0,0,0,0.1)
+    box-shadow 0 5px 14px 3px rgba(0,0,0,0.2)
+    &:hover
+        background-color rgba(0,0,0,0.4)
+        padding-bottom 24px
+        width 100px
+        & .side-button
+            height 35px
+            width 35px
+            margin 45px auto
+            backface-visibility hidden
+            &::before
+                opacity 1
+                transition 0.4s 0.4s ease
+            &:after
+                text-decoration none
+                left 51%
+                transition 0.3s 0.15s ease
+        
+.side-button
+    display block
+    position relative
+    height 8px
+    width 8px
+    background-color white
+    border-radius 100%
+    transition 0.3s ease
+    margin 24px auto
+    cursor pointer
+    &:after
+        position absolute
+        bottom -20px
+        left 100px
+        width 60px
+        transition 0.3s ease
+        text-align center
+        color white
+        font-family "Raleway"
+        font-size 12px
+        font-family 600
+        letter-spacing 2px
+        transform translateX(-50%)
+    &:nth-child(1)
+        &::before
+            content ""
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%) rotate(45deg)
+            height 60%
+            width 60%
+            background-color #222
+            opacity 0
+            transition 0.3s ease
+        &::after
+            content "ESS"
+    &:nth-child(2)
+        &::before
+            content ""
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            height 80%
+            width 80% 
+            background url('https://cdn4.iconfinder.com/data/icons/brainy-icons-free-36-science-and-education-icons/64/glasses_64.png') no-repeat center
+            background-size cover
+            opacity 0
+            transition 0.3s ease
+        &::after
+            content "Secure"
+    &:nth-child(3)
+        &::before
+            content ""
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            height 80%
+            width 80% 
+            background url('https://cdn2.iconfinder.com/data/icons/video-gaming-outline/32/playstation_gaming_game_video-128.png') no-repeat center
+            background-size 80%
+            opacity 0
+            transition 0.3s ease
+        &::after
+            content "Commercial"
+    &:nth-child(4)::after
+        content "Contact"
+    &:nth-child(5)::after
+        content "Or die"
+    &:hover
+        background-color #DA2
+    &.active
+        background-color #DA2
+    
+.big-section
+    display block
+    position relative
+    height 720px
+    overflow hidden
+    border-bottom 1px solid
+    box-sizing border-box
+    font-family "Raleway"
+    font-size 24px
+    line-height 32px
+    letter-spacing 5px
+    &:nth-child(1)
+        background-color #D3D9D9
+        height 1400px
+    &:nth-child(4)
+        background-color #D3D9D9
+    &:nth-child(2)
+    &:nth-child(5)
+        background-color #E9DFD6
+    &:nth-child(3)
+        background-color #E5E7E1
+
+.content-container
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    height 85%
+    background-color #FFF
+    overflow hidden
+    box-shadow -10px 8px 28px 8px rgba(0,0,0,0.3)
+    &.half-container
+        width 470px
+        background-color $coverColor3
+    &.full-page-container
+        display flex
+        width 1000px
+        
+.first-background-part
+    display block
+    position relative
+    background-color $coverColor1
+    height 40%
+    z-index 2
+    &::before
+        content ""
+        position absolute
+        bottom -40%
+        left 0
+        width 130%
+        height 130%
+        background-color $coverColor1
+        transform skewY(-45deg)
+        
+.first-bottom-part
+    position absolute
+    top 68%
+    left -6%
+    width 130%
+    height 200px
+    transform rotate(-45deg)
+    text-transform uppercase
+    text-align center
+
+.first-overlap-part
+    position absolute
+    z-index 5
+    top -150px
+    left 50%
+    transform translateX(-50%) rotate(45deg)
+    height 500px
+    width 500px
+    background-color $coverColor2
+    &::before
+        content"You Should Put Some Text Here"
+        position absolute
+        top 112%
+        left 65%
+        width 120%
+        height 80px
+        color white
+        text-transform uppercase
+        font-weight 300
+        text-align center
+        transform rotate(-90deg)
+    
+.first-corner-part
+    position absolute
+    right -53.5%
+    bottom -19.6%
+    height 490px
+    width 530px
+    background-color $coverColor2
+    transform rotate(-45deg)
+    & .corner-diamond-container
+        position absolute
+        height 100px
+        width 100px
+        overflow hidden
+        box-sizing border-box
+        top 30%
+        left 50%
+        transform translate(-50%, -50%) rotate(90deg)
+        &::before
+            content""
+            position absolute
+            top 20px
+            left 20px
+            right 20px
+            bottom 20px
+            border 3px solid black
+        &::after
+            content""
+            position absolute
+            top 35px
+            left 35px
+            right 20px
+            bottom 20px
+            border 3px solid black
+        &:hover
+            transform translate(-50%, -50%) rotate(90deg) scale(1.4)
+    
+.first-top-part
+    position absolute
+    top 20px
+    left 50%
+    transform translateX(-50%)
+    height 220px
+    width 430px
+    z-index 10
+    
+.diamond-container
+    position absolute
+    height 100px
+    width 100px
+    overflow hidden
+    box-sizing border-box
+    transform rotate(45deg)
+    -webkit-backface-visibility hidden
+    -moz-backface-visibility hidden
+    &:nth-child(1)
+        top 95px
+        left 24px
+        & .diamond-background
+            background url('http://skream.jp/news/assets_c/2013/07/daftpunk-thumb-1200xauto-5253.jpg') no-repeat center
+    &:nth-child(2)
+        top 25px
+        left 95px
+        background-color #DDD
+    &:nth-child(3)
+        top 96px
+        left 165px
+        background-color rgba(0,0,0,0.3)
+    &:nth-child(4)
+        top 25px
+        left 235px
+        & .diamond-background
+            background url('https://d13yacurqjgara.cloudfront.net/users/464297/screenshots/1849217/dribbb2-01_1x.jpg') no-repeat right
+    &:nth-child(5)
+        top 95px
+        left 306px
+        background-color #333
+    &:nth-child(6)
+        top 260px
+        left 165px
+        &::before
+            content""
+            position absolute
+            top 20px
+            left 20px
+            right 20px
+            bottom 20px
+            border 3px solid black
+        &::after
+            content""
+            position absolute
+            top 35px
+            left 35px
+            right 20px
+            bottom 20px
+            border 3px solid black
+    &:hover
+        transform rotate(45deg) scale(1.3)
+        z-index 15
+        transition 0.3s ease, z-index 0.05s linear
+    &.fade-out-before
+        &::before
+            content ""
+            position absolute
+            top 0
+            bottom 0
+            left 0
+            right 0
+            background-color rgba(0,0,0,0.6)
+            transition 0.4s ease
+            z-index 20
+        &:hover::before
+            opacity 0
+        
+.diamond-background
+    position absolute
+    top -25%
+    left -25%
+    height 150%
+    width 150%
+    background-size cover !important
+    transform rotate(-45deg)
+    
+.diamond-inner
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    height 48%
+    width 48%
+    text-align center
+    
+.social-buttons-container
+    position absolute
+    top 0
+    left 0
+    right 0
+    height 80px
+    text-align center
+    
+.social-button
+    display inline-block
+    position relative
+    height 50px
+    width 50px
+    background-size cover !important
+    transition 0.3s ease
+    margin 14px 2px
+    cursor pointer
+    &:hover
+        transform scale(1.2)
+        transition 0.3s cubic-bezier(0.3, 0.2, 0, 2.5)
+    &.twitter-button
+        background url("https://cdn4.iconfinder.com/data/icons/hexagon-black-social/60/twitter-256.png") no-repeat center
+    &.github-button
+        background url("https://cdn4.iconfinder.com/data/icons/hexagon-black-social/60/github-256.png") no-repeat center
+    &.facebook-button
+        background url("https://cdn4.iconfinder.com/data/icons/hexagon-black-social/60/facebook-256.png") no-repeat center
+    &.pinterest-button
+        background url("https://cdn4.iconfinder.com/data/icons/hexagon-black-social/60/pinterest-256.png") no-repeat center
+    &.linkedin-button
+        background url("https://cdn4.iconfinder.com/data/icons/hexagon-black-social/60/linkedin-256.png") no-repeat center
+    
+.flex-half 
+    flex 1 1 0
+    box-sizing border-box
+
+.hipster-left-half
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    width 50%
+    background $hipsterBackground1
+    background-size cover !important
+    
+.hipster-right-half
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    width 50%
+    box-shadow -5px 0px 15px -1px rgba(0,0,0,0.3)
+    overflow hidden
+    
+.hipster-scroll-selector
+    display block
+    position relative
+    z-index 15
+    height 70px
+    width 100%
+    box-shadow 0px 5px 15px 0px rgba(0,0,0,0.3)
+    text-align center
+    & .hipster-selector-link
+        display inline-block
+        text-decoration none
+        color black
+        position relative
+        font-size 14px
+        margin 0 8px
+        line-height 70px
+        cursor pointer
+        &::before
+            content ""
+            position absolute
+            height 2px
+            width 80%
+            background-color transparent
+            bottom 10px
+            left 50%
+            transform translateX(-50%)
+            transition 0.3s ease
+        &:hover::before
+            bottom 20px
+            background-color black
+        &.active::before
+            bottom 20px
+            background-color black
+            
+.selection-box
+    position absolute
+    z-index 5
+    opacity 0
+    top 70px
+    left 0
+    right 0
+    bottom 0
+    background-color $coverColor3
+    -webkit-backface-visibility hidden
+    -moz-backface-visibility hidden
+    &.active
+        opacity 1
+        z-index 10
+    
+.chillwave-top-text
+    position absolute
+    top 46%
+    left 50%
+    width 90%
+    transform translateX(-50%)
+    font-size 34px
+    font-weight 600
+    line-height 40px
+    letter-spacing 5px
+    text-align center
+    
+.chillwave-bottom-text
+    position absolute
+    top 55%
+    left 50%
+    width 90%
+    transform translateX(-50%)
+    font-size 18px
+    line-height 28px
+    letter-spacing 3px
+    text-align center
+    
+.chillwave-art
+    position absolute
+    top 5%
+    transform translateX(-50%)
+    height 200px
+    width 200px
+    background-size cover !important
+    &.one
+        background url('http://www.bromygod.com/wp-content/uploads/2014/04/fun-017-04272014.jpg') no-repeat center
+        left 27%
+    &.two
+        background url('http://thenewlofi.com/wp-content/uploads/2015/01/chillwave_wednesday1-500x4041.jpg') no-repeat center
+        left 73%
+    &:before
+        content ""
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        right 0
+        background-color rgba(0,0,0,0.4)
+        transition 0.4s ease
+    &:hover::before
+        background-color rgba(0,0,0,0)
+        
+.yolo-art
+    position absolute
+    top 45%
+    left 50%
+    transform translate(-50%, -50%)
+    height 250px
+    width 460px
+    line-height 10px
+    text-align center
+    background url('https://media.giphy.com/media/o0GlXnmHwBlde/giphy.gif') no-repeat center
+    background-size cover
+    
+.quarter-square
+    position absolute
+    height 50%
+    width 50%
+    font-size 14px
+    letter-spacing 2px
+    &.top-left
+        top 0
+        left 0
+    &.top-right
+        top 0
+        right 0
+    &.bottom-left
+        bottom 0
+        left 0
+    &.bottom-right
+        bottom 0
+        right 0
+    & .center-text
+        position absolute
+        top 50%
+        left 50%
+        width 90%
+        transform translate(-50%, -50%)
+        
+.old-timey-photo
+    height 100%
+    width 100%
+    background-size cover !important
+    &.one
+        background url('https://40.media.tumblr.com/5ed90f8d42ab3001acbaef77f2e69042/tumblr_mtlz77i1nm1rfwfq9o1_500.jpg') no-repeat center
+    &.two
+        background url('http://blogs.oberlin.edu/pictures/Aries/hipster_love.jpg') no-repeat center
+    &::before
+        content ""
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        right 0
+        opacity 0.6
+        background url('http://il7.picdn.net/shutterstock/videos/2952439/thumb/1.jpg') no-repeat center
+        background-size cover !important
+    
+.photography-box, .style-box
+    padding-top 40px
+    text-align center
+    
+.inner-content-container
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    z-index 10
+    overflow-x hidden
+    text-align center
+    box-shadow 5px 0 22px 1px rgba(0,0,0,0.3)
+    &::-webkit-scrollbar
+        width 10px
+    &::-webkit-scrollbar-thumb
+        background-color rgba(0,0,0,0.4)
+    &::-webkit-scrollbar-track
+        background-color rgba(0,0,0,0.2)
+        
+.side-bar
+    position absolute
+    top 0
+    bottom 0
+    right 0
+    width 260px
+    padding 40px 10px 20px
+    text-align center
+    background-color $coverColor3
+    & .side-bar-item-container .side-bar-item
+        margin 30px 0
+        text-transform uppercase
+        font-weight 600
+        cursor pointer
+        transition 0.3s ease
+        &:hover
+            color #E78533
+        
+.third-header-bar
+    height 60px
+    background-color white
+    box-shadow 0px 5px 20px 0px rgba(0,0,0,0.5)
+    padding 10px 40px
+    z-index 15
+    & .logo
+        display inline-block
+        position relative
+        line-height 60px
+        text-transform uppercase
+        float left
+        font-weight 300
+        & span
+            color #E78533
+            font-weight 600
+    & .hamburger-thing
+        display inline-block
+        position relative
+        float right
+        margin-top 8px
+        height 45px
+        width 45px
+        transition 0.4s ease
+        & .white-bar
+            position absolute
+            height 2px
+            width 66%
+            background-color black
+            left 50%
+            transform translateX(-50%)
+            transition 0.4s ease, width 0.3s ease
+            &:nth-child(1)
+                top 25%
+            &:nth-child(2)
+            &:nth-child(3)
+                top 47%
+            &:nth-child(4)
+                top 71%
+
+#menuButton
+    display none
+    &:checked
+        &+ .hamburger-thing .white-bar
+            &:nth-child(1)
+            &:nth-child(4)
+                width 0%
+            &:nth-child(2)
+                transform translateX(-50%) rotate(45deg)
+            &:nth-child(3)
+                transform translateX(-50%) rotate(-45deg)
+    
+.third-top-image-container
+    height calc(100% - 80px)
+    background url('https://4.bp.blogspot.com/-1UHmmr4AumQ/T-QwGJwJduI/AAAAAAAAKRE/6Vgq1WmrEzM/s1600/photoshops+(81).jpg') no-repeat center
+    background-size cover
+    &::before
+        content ""
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        right 0
+        background-color rgba(0,0,0,0.6)        
+    
+.pop-text-container
+    position absolute
+    top 100px
+    left 70px
+    text-align left
+    width 480px
+    color white
+    font-family "Montserrat"
+    & .pop-text
+        font-size 50px
+        line-height 58px
+        font-weight 700
+        margin-bottom 10px
+        text-transform uppercase
+        color #E78533
+        & span
+            color white
+    & .smaller-pop-text
+        font-size 16px
+        line-height 20px
+        
+.down-arrow
+    position absolute
+    height 45px
+    width 105px
+    bottom 60px
+    left 50%
+    transform translateX(-50%)
+    animation bob 1.1s alternate infinite ease-in-out
+    backface-visibility hidden
+    &::before
+    &::after
+        content ""
+        position absolute
+        width 40%
+        height 4px
+        background-color #FFF
+        top 20px
+    &::before
+        transform rotate(36deg)
+        left 15%
+    &::after
+        transform rotate(-36deg)
+        left 45.5%    
+@keyframes bob {to {bottom: 10px;}}
+    
+.third-info-container
+    height 562px
+    background white
+    padding 40px 20px 10px
+    text-align center
+    
+.ps4-side-image
+    position absolute
+    height 489px
+    width 835px
+    left 55%
+    background url('http://freepngimages.com/wp-content/uploads/2015/10/playstation-4-games-console.png') no-repeat center
+    z-index 5
+    
+.third-footer-container
+    height 300px
+    background #222
+
+    
